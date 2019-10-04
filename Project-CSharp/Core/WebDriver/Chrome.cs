@@ -13,11 +13,8 @@ namespace Project_CSharp.Core.WebDriver
     {
         public IWebDriver InitDriver()
         {
-            String driverFolder = "Driver";
-            String path = Path.GetDirectoryName(GetType().Assembly.Location);
-            String chromeDriverPath = Path.Combine(path, driverFolder);
             ChromeOptions options = new ChromeOptions();
-            return new ChromeDriver(chromeDriverPath, options);
+            return new ChromeDriver(options);
         }
     }
 }

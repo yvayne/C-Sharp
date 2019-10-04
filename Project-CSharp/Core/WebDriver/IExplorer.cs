@@ -12,9 +12,8 @@ namespace Project_CSharp.Core.WebDriver
     {
         public IWebDriver InitDriver()
         {
-            string driverPath = AppDomain.CurrentDomain.BaseDirectory;
-            System.Environment.SetEnvironmentVariable("webdriver.ie.driver", driverPath + "\\IEDriverServer.exe");
-            return new InternetExplorerDriver();
+            InternetExplorerOptions options = new InternetExplorerOptions();
+            return new InternetExplorerDriver(options);
         }
     }
 }

@@ -12,10 +12,9 @@ namespace Project_CSharp.Core.WebDriver
     {
         public IWebDriver InitDriver()
         {
-            string driverPath = AppDomain.CurrentDomain.BaseDirectory;
-            System.Environment.SetEnvironmentVariable("webdriver.gecko.driver", driverPath + "\\geckodriver.exe");
+            
             FirefoxOptions options = new FirefoxOptions();
-            return new FirefoxDriver(driverPath, options);
+            return new FirefoxDriver(options);
         }
     }
 }

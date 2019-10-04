@@ -14,7 +14,6 @@ namespace Project_CSharp.Core.WebDriver
         private static DriverManager instance;
         private IWebDriver webDriver;
         private WebDriverWait webDriverWait;
-        public static string ForceBrowser;
 
         /// <summary>
         /// This method will create required instance for webdriver.
@@ -43,23 +42,14 @@ namespace Project_CSharp.Core.WebDriver
         public void InitializeDriver()
         {
             DriverTypes driverType;
-            if (ForceBrowser != null)
-            {
-                driverType = (DriverTypes)Enum.Parse(typeof(DriverTypes), ForceBrowser);
-            }
-            else
-            {
-                driverType = (DriverTypes)Enum.Parse(typeof(DriverTypes), EnvironmentManager.GetEnvironment().Browser);
-            }
-
+            
+            driverType = (DriverTypes)Enum.Parse(typeof(DriverTypes), EnvironmentManager.GetEnvironment().Browser);
             int implicitWait = int.Parse(ConfigurationManager.AppSettings["ImplicitTime"].ToString());
             int explicitWait = int.Parse(ConfigurationManager.AppSettings["ExplicitTime"].ToString());
-
             webDriver = DriverFactory.GetDriver(driverType);
-            webDriver.Manage().Window.Maximize();
-
             webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(implicitWait);
             webDriverWait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(explicitWait));
+            webDriver.Manage().Window.Maximize();
         }
 
         /// <summary>

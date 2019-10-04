@@ -1,0 +1,10 @@
+﻿{
+  "testOnePage": "http://testmy.dtc.corp/dtctrg/patchtest/testone.asp",
+  "testOneHtml5Page": "http://testmy.dtc.corp/DTCTrg/PatchTestStandards/TestOne.asp",
+  "testTwoPage": "http://testmy.dtc.corp/dtctrg/patchtest/testTwo.asp",
+  "testThreePage": "http://testmy.dtc.corp/dtctrg/patchtest/testthree.asp",
+  "qStatFaxPage": "http://testmy.abf.corp/ABFSls/QStatQFax/qfs_default.asp",
+  "aimsBillingPage": "http://testmy.abf.corp/abfsls/aims/aims.asp",
+  "salesRepMaintenancePage": "http://testmy.abf.corp/abfsls/salesrepmaintenance/srm_default.asp",
+  "Browser": "IEXPLORER"
+}
